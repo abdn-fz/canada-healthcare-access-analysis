@@ -145,6 +145,6 @@ Le backlog (`Backlog_jira.csv`) contient **96 tickets** : 5 epics, 15 user stori
 
 ## Auteurs et licence
 
-- ** Équipe de développement :** Fatima Zohra Aboudeine · Safaa Namane · Badr Kabbadj · Mohamed Ali Alaoui
+- **Équipe de développement :** Fatima Zohra Aboudeine · Safaa Namane · Badr Kabbadj · Mohamed Ali Alaoui
 - **Encadrement / Scrum Master :** Dr Nacereddine Benzebouchi
 - **Licence :** ## Contient de l'information visée par la [Licence du gouvernement ouvert – Canada](https://ouvert.canada.ca/fr/licence-du-gouvernement-ouvert-canada).
