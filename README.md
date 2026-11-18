@@ -1,6 +1,7 @@
 # Accès à un fournisseur habituel de soins primaires au Canada (2015-2022)
 
 > Analyse de l'évolution de l'accès à un médecin de famille, de ses écarts selon les régions et les groupes de population, et de l'effet de la COVID-19 — démarche **CRISP-DM**, backlog géré dans **Jira**, restitution dans **Power BI**.
+> Ce projet est réalisé dans le cadre du module Projet Analyse de données (IFM30518-0020-A2026), session 3 du programme Sciences des données appliquées au Collège La Cité.
 
 ---
 
