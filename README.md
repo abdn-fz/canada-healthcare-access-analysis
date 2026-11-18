@@ -15,7 +15,6 @@
 7. [Livrables](#livrables)
 8. [Limites connues](#limites-connues)
 9. [Structure du dépôt](#structure-du-dépôt)
-10. [Utiliser le backlog Jira](#utiliser-le-backlog-jira)
 11. [Auteurs et licence](#auteurs-et-licence)
 
 ---
