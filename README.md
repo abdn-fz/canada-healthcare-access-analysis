@@ -1,6 +1,6 @@
 # Accès à un fournisseur habituel de soins primaires au Canada (2015-2022)
 
-> Analyse de l'évolution de l'accès à un médecin de famille, de ses écarts selon les régions et les groupes de population, et de l'effet de la COVID-19 — démarche **CRISP-DM**, backlog géré dans **Jira**, avec restitution dans **Power BI**. Ce projet est réalisé dans le cadre du module Projet Analyse de données (IFM30518-0020-A2026), session 3 du programme Sciences des données appliquées au Collège La Cité.
+> Analyse de l'évolution de l'accès à un médecin de famille, de ses écarts selon les régions et les groupes de population, de l'effet de la COVID-19 et des profils régionaux d'accès par analyse multivariée (ACP) — démarche **CRISP-DM**, backlog géré dans **Jira**, avec restitution dans **Power BI**. Ce projet est réalisé dans le cadre du module Projet Analyse de données (IFM30518-0020-A2026), session 3 du programme Sciences des données appliquées au Collège La Cité.
 
 ---
 
@@ -25,7 +25,8 @@ Ce projet vise à permettre aux **décideurs en santé publique** de comprendre 
 
 - comment l'accès à un fournisseur habituel de soins primaires (indicateur approché du médecin de famille) a **évolué dans le temps** et **selon les régions** ;
 - **pourquoi** cet accès diffère (âge, sexe, région, facteurs contextuels) ;
-- ce que la **COVID-19** a changé pendant et après la pandémie.
+- ce que la **COVID-19** a changé pendant et après la pandémie ;
+- quels **profils régionaux d'accès** sont similaires ou contrastés selon les groupes d'âge.
 
 **Parties prenantes visées :** décideurs en santé publique, planificateurs régionaux de santé, analystes de politiques de santé.
 
@@ -41,6 +42,8 @@ Le projet est structuré autour de six questions (Q1 à Q6) reliées chacune à 
 | Q4 / H4 | Facteurs et composition | Effet de composition vs effet régional (standardisation directe), facteurs contextuels |
 | Q5 / H5 | Effet de la COVID-19 | Projection de la tendance d'avant COVID vs valeurs observées |
 | Q6 / H6 | Après-COVID | Récupération en 2022 par rapport à 2019 et à la tendance |
+
+Une analyse multivariée exploratoire complète ces six questions afin d'identifier les principales dimensions des disparités régionales et les profils d'accès similaires.
 
 ## Données
 
@@ -70,9 +73,11 @@ Le projet suit le cycle **CRISP-DM**. Chaque tâche du backlog porte un label in
 
 Les retours en arrière entre phases sont identifiés par le label `retour-crispdm`. Les tâches de recherche à durée limitée sont de type **Spike**.
 
+Le Sprint 5 complète cette démarche par une analyse des corrélations entre groupes d'âge, une **analyse en composantes principales (ACP)** sur les taux d'accès par province et année, et une étude exploratoire de la classification et de la robustesse des profils régionaux. L'analyse principale porte sur 2015-2021 ; 2022 est examinée séparément.
+
 ## Organisation du backlog
 
-Le backlog (`Backlog_jira.csv`) contient **96 tickets** : 5 epics, 15 user stories, 76 sous-tâches, pour **76 story points**.
+Le backlog (`Backlog_jira.csv`) contient **123 tickets** : 6 epics, 19 user stories, 98 sous-tâches, pour **92 story points**.
 
 | Epic | Contenu | User stories |
 |------|---------|--------------|
@@ -80,6 +85,7 @@ Le backlog (`Backlog_jira.csv`) contient **96 tickets** : 5 epics, 15 user stori
 | **Portrait de l'accès dans le temps et par région** | Table analytique, tendance nationale, comparaison des provinces, trajectoires régionales | US-03 à US-06 |
 | **Comprendre les différences et leurs facteurs** | Âge × sexe, âge × province, standardisation, facteurs contextuels | US-07 à US-10 |
 | **Mesurer l'impact de la COVID-19 et l'après-COVID** | Effet COVID, récupération, hétérogénéité | US-11 à US-13 |
+| **Approfondir les profils d'accès par analyse multivariée** | Préparation de la matrice, corrélations, ACP, profils régionaux et robustesse | US-16 à US-19 |
 | **Communiquer les résultats et recommander** | Tableau de bord Power BI, conclusions et recommandations | US-14, US-15 |
 
 ### Conventions
@@ -96,7 +102,8 @@ Le backlog (`Backlog_jira.csv`) contient **96 tickets** : 5 epics, 15 user stori
 | **Sprint 2** | US-05, US-06, US-07 | 15 | Comparaison régionale, trajectoires, groupes âge × sexe |
 | **Sprint 3** | US-08, US-09, US-10 | 16 | Zones critiques, standardisation, facteurs contextuels |
 | **Sprint 4** | US-11, US-12, US-13 | 16 | Impact et récupération post-COVID, hétérogénéité |
-| **Sprint 5** | US-14, US-15 | 13 | Tableau de bord Power BI, conclusions et recommandations |
+| **Sprint 5** | US-16, US-17, US-18, US-19 | 16 | Analyse multivariée, ACP et profils régionaux d'accès |
+| **Sprint 6** | US-14, US-15 | 13 | Tableau de bord Power BI, conclusions et recommandations |
 
 ## Livrables
 
@@ -115,6 +122,10 @@ Le backlog (`Backlog_jira.csv`) contient **96 tickets** : 5 epics, 15 user stori
 | Graphique avant/pendant COVID et note méthodologique | US-11 |
 | Tableau de récupération par région (vert / orange / rouge) | US-12 |
 | Graphique des régions et groupes les plus touchés | US-13 |
+| Matrice analytique et fiche de contrôle qualité | US-16 |
+| Matrice de corrélation et note d'interprétation | US-17 |
+| Dossier de résultats de l'ACP | US-18 |
+| Fiche des profils régionaux et synthèse multivariée | US-19 |
 | Rapport Power BI interactif publié | US-14 |
 | Présentation finale et résumé exécutif | US-15 |
 
@@ -127,6 +138,7 @@ Le backlog (`Backlog_jira.csv`) contient **96 tickets** : 5 epics, 15 user stori
 - **2022 est la seule année après la pandémie** dans les données.
 - Faibles effectifs et estimations supprimées pour les petites provinces et certains croisements.
 - Analyses **associatives uniquement** : aucune conclusion causale.
+- L'ACP et les regroupements régionaux sont exploratoires et sensibles aux variables retenues et aux choix méthodologiques ; leur robustesse doit être évaluée.
 - Hors périmètre : délais d'attente, qualité des soins, besoins non comblés, causalité.
 
 ## Structure du dépôt
